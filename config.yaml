@@ -1,0 +1,68 @@
+# 记忆系统配置文件
+
+# LLM 配置
+llm:
+  provider: "openai"  # openai, anthropic, local
+  api_key: "${OPENAI_API_KEY}"
+  base_url: "https://api.openai.com/v1"
+  model: "gpt-4o-mini"
+  max_tokens: 4096
+  temperature: 0.3
+
+# 嵌入模型配置
+embeddings:
+  model: "sentence-transformers/all-MiniLM-L6-v2"
+  dimension: 384
+
+# 向量存储配置
+vector_store:
+  type: "chromadb"
+  persist_directory: "./vector_store"
+  collection_name: "conversation_memories"
+
+# 记忆提取配置
+memory_extraction:
+  # 是否在对话结束后自动提取
+  auto_extract: true
+
+  # 提取的最小对话长度（字符数）
+  min_conversation_length: 100
+
+  # 记忆类别
+  categories:
+    - "写作偏好"
+    - "语气风格"
+    - "关注兴趣"
+    - "股票追踪"
+    - "邮件分类规则"
+    - "个人背景"
+    - "工作习惯"
+    - "技术偏好"
+
+  # 每日最大提取记忆数
+  max_memories_per_day: 20
+
+# 身份更新配置
+identity_update:
+  # 更新频率：daily（每日）, weekly（每周）, manual（手动）
+  frequency: "daily"
+
+  # 是否合并相似记忆
+  deduplicate: true
+
+  # 需要保留的最新记忆数量
+  max_identity_items: 50
+  max_soul_items: 30
+
+# 存储路径配置
+paths:
+  conversations: "./conversations"
+  memories: "./memories"
+  logs: "./logs"
+
+# 日志配置
+logging:
+  level: "INFO"
+  file: "./logs/memory_system.log"
+  max_size_mb: 10
+  backup_count: 5
