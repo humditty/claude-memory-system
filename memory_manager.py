@@ -8,12 +8,12 @@ from typing import Optional, Dict, Any, List
 from datetime import datetime
 import sys
 
-from .config_loader import MemorySystemConfig
-from .conversation_saver import ConversationSaver
-from .memory_extractor import MemoryExtractor
-from .vector_store import VectorStore
-from .identity_updater import IdentityUpdater, UpdateResult
-from .models import Conversation, Memory
+from config_loader import MemorySystemConfig
+from conversation_saver import ConversationSaver
+from memory_extractor import MemoryExtractor
+from vector_store import VectorStore
+from identity_updater import IdentityUpdater, UpdateResult
+from models import Conversation, Memory
 
 # 配置日志
 logging.basicConfig(

@@ -8,8 +8,8 @@ from chromadb.config import Settings
 from sentence_transformers import SentenceTransformer
 import numpy as np
 
-from .models import Memory, Conversation
-from .config_loader import MemorySystemConfig, VectorStoreConfig
+from models import Memory, Conversation, MemoryCategory
+from config_loader import MemorySystemConfig, VectorStoreConfig
 
 
 class VectorStore:

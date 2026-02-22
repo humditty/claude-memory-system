@@ -4,10 +4,10 @@
 import json
 from datetime import datetime
 from pathlib import Path
-from typing import Optional, Dict, Any
+from typing import Optional, Dict, Any, List
 from dataclasses import asdict
-from .models import Conversation
-from .config_loader import MemorySystemConfig, PathsConfig
+from models import Conversation
+from config_loader import MemorySystemConfig, PathsConfig
 
 
 class ConversationSaver:
@@ -90,7 +90,7 @@ class ConversationSaver:
         self,
         start_date: Optional[datetime] = None,
         end_date: Optional[datetime] = None
-    ) -> list[Conversation]:
+    ) -> List[Conversation]:
         """
         加载指定时间范围内的对话
 
@@ -120,7 +120,7 @@ class ConversationSaver:
 
         return conversations
 
-    def get_today_conversations(self) -> list[Conversation]:
+    def get_today_conversations(self) -> List[Conversation]:
         """获取今天的对话"""
         today = datetime.now().date()
         all_conversations = self.load_conversations()

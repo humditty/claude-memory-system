@@ -7,8 +7,8 @@ from dataclasses import dataclass, field
 from datetime import datetime
 import uuid
 
-from .models import Memory, MemoryCategory, Conversation
-from .config_loader import MemorySystemConfig, MemoryExtractionConfig
+from models import Memory, MemoryCategory, Conversation
+from config_loader import MemorySystemConfig, MemoryExtractionConfig
 
 
 @dataclass

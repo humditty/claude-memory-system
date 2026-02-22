@@ -4,13 +4,13 @@
 from typing import List, Dict, Any, Optional
 from datetime import datetime, timedelta
 from pathlib import Path
-from dataclasses import dataclass, asdict
+from dataclasses import dataclass, asdict, field
 import json
 
-from .models import Memory, Identity, Soul, MemoryCategory
-from .config_loader import MemorySystemConfig, IdentityUpdateConfig
-from .vector_store import VectorStore
-from .memory_extractor import MemoryExtractor
+from models import Memory, Identity, Soul, MemoryCategory
+from config_loader import MemorySystemConfig, IdentityUpdateConfig
+from vector_store import VectorStore
+from memory_extractor import MemoryExtractor
 
 
 @dataclass
