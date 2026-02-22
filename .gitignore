@@ -70,3 +70,7 @@ Thumbs.db
 # 其他
 .cache/
 .selenium/
+
+# GitHub 配置脚本（包含账号信息，不应提交）
+.github-accounts-setup.sh
+.generate-humditty-key.sh
